@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text("container widget")),
+        appBar: AppBar(title: const Text("container wid1")),
         body: Container(
           decoration: BoxDecoration(
             //alignment: Alignment.center,
