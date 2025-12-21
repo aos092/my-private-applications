@@ -1,45 +1,40 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp( MyApp());
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
-
+   MyApp({super.key});
+   List employee =[
+     {"name" : "abdullah" ,"age" : 26 , "lastname" : "subih" ,} ,
+     {"name" : "ali" , "age" : 24 , "lastname" : "abo salem" ,} ,
+     {"name" : "omar" , "age" : 49 , "lastname" : "sabeeh" ,} ,
+     {"name" : "taha" , "age" : 45 , "lastname" : "sabeeh" ,} ,
+     {"name" : "saleh" , "age" : 31 , "lastname" : "sabeeh" ,} ,
+     {"name" : "tarqr" , "age" : 12 , "lastname" : "sabeeh" ,} ,
+     {"name" : "fahd" , "age" : 64 , "lastname" : "sabeeh" ,} ,
+  ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: Scaffold(
-        appBar: AppBar(title: const Text("container widget")),
+    home: Scaffold(
+        appBar: AppBar(title: const Text("Title")),
         body: Container(
-          decoration: BoxDecoration(
-            //alignment: Alignment.center,
-            color: Colors.teal,
-            borderRadius: const BorderRadius.all(Radius.circular(4000) ),
-            border: Border.all(color: Colors.black, width: 10),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.blue,
-                offset: Offset(1, 1),
-                spreadRadius: 1,
-                blurRadius: 10,
-              ),
-            ],
+          height: 400,
+          child: ListView.builder(
+            itemCount: employee.length,
+            itemBuilder: (context,i){
+              return Container(
+                height: 100,
+                color: Colors.deepOrange,
+                child: Text(employee[i]['name'],
+                textAlign: TextAlign.center,
+                style: TextStyle(fontSize: 16 ,color: Colors.white),));
+
+            },
           ),
-          width: 300,
-          height: 300,
-          alignment: Alignment.center,
-          margin: const EdgeInsets.all(10),
-          padding: const EdgeInsets.all(20),
-          child: const Text(
-            "Abdullah Subih",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 30.2,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+
         ),
       ),
     );
