@@ -11,34 +11,25 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text("container widget")),
-        body: Container(
-          decoration: BoxDecoration(
-            //alignment: Alignment.center,
-            color: Colors.teal,
-            borderRadius: const BorderRadius.all(Radius.circular(4000) ),
-            border: Border.all(color: Colors.black, width: 10),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.blue,
-                offset: Offset(1, 1),
-                spreadRadius: 1,
-                blurRadius: 10,
-              ),
+        appBar: AppBar(title: const Text("use scorll"),),
+        body: SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              Container(width: 200, height: 100, color: Colors.yellow,),
+              Container(width: 200, height: 100, color: Colors.green,),
+              Container(width: 200, height: 100, color: Colors.blue,),
+              Container(width: 200, height: 100, color: Colors.red,),
+              Container(width: 200, height: 100, color: Colors.black12,),
+              Container(width: 200, height: 100, color: Colors.brown,),
+              Container(width: 200, height: 100, color: Colors.black,),
+              Container(width: 200, height: 100, color: Colors.grey,),
+              Container(width: 200, height: 100, color: Colors.pinkAccent,),
+              Container(width: 200, height: 100, color: Colors.purple,),
+              Container(width: 200, height: 100, color: Colors.deepOrange,),
+              Container(width: 200, height: 100, color: Colors.teal,)
+
             ],
-          ),
-          width: 300,
-          height: 300,
-          alignment: Alignment.center,
-          margin: const EdgeInsets.all(10),
-          padding: const EdgeInsets.all(20),
-          child: const Text(
-            "Abdullah Subih",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 30.2,
-              fontWeight: FontWeight.bold,
-            ),
           ),
         ),
       ),
