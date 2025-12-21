@@ -6,7 +6,7 @@ void main() {
 
 class MyApp extends StatelessWidget {
    MyApp({super.key});
-   List employee =[
+  final List employee =[
      {"name" : "abdullah" ,"age" : 26 , "lastname" : "subih" ,} ,
      {"name" : "ali" , "age" : 24 , "lastname" : "abo salem" ,} ,
      {"name" : "omar" , "age" : 49 , "lastname" : "sabeeh" ,} ,
@@ -21,13 +21,16 @@ class MyApp extends StatelessWidget {
     home: Scaffold(
         appBar: AppBar(title: const Text("Title")),
         body: Container(
-          height: 400,
-          child: ListView.builder(
+          // height: 400,
+          child: ListView.separated(
+            separatorBuilder:(context,i){
+              return Divider(color: Colors.black, height: 10,thickness: 2.0,);
+            } ,
             itemCount: employee.length,
             itemBuilder: (context,i){
               return Container(
                 height: 100,
-                color: Colors.deepOrange,
+                color:i.isEven ?Colors.deepOrange : Colors.teal,
                 child: Text(employee[i]['name'],
                 textAlign: TextAlign.center,
                 style: TextStyle(fontSize: 16 ,color: Colors.white),));
