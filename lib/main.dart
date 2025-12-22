@@ -6,23 +6,28 @@ void main() {
 
 class MyApp extends StatelessWidget {
    MyApp({super.key});
-   List employee =[
+   final List employee =[
      {"name" : "abdullah" ,"age" : 26 , "lastname" : "subih" ,} ,
      {"name" : "ali" , "age" : 24 , "lastname" : "abo salem" ,} ,
      {"name" : "omar" , "age" : 49 , "lastname" : "sabeeh" ,} ,
      {"name" : "taha" , "age" : 45 , "lastname" : "sabeeh" ,} ,
      {"name" : "saleh" , "age" : 31 , "lastname" : "sabeeh" ,} ,
-     {"name" : "tarqr" , "age" : 12 , "lastname" : "sabeeh" ,} ,
+     {"name" : "salem" , "age" : 12 , "lastname" : "sabeeh" ,} ,
      {"name" : "fahd" , "age" : 64 , "lastname" : "sabeeh" ,} ,
+     {"name" : "noor" , "age" : 64 , "lastname" : "sabeeh" ,} ,
   ];
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
     home: Scaffold(
-        appBar: AppBar(title: const Text("Title")),
+        appBar: AppBar(title: const Text("GridView")),
         body: Container(
           height: 400,
-          child: ListView.builder(
+          child: GridView.builder(gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 2,
+              mainAxisSpacing: 10.0,
+              crossAxisSpacing: 10.0,
+              mainAxisExtent: 20.0),
             itemCount: employee.length,
             itemBuilder: (context,i){
               return Container(
