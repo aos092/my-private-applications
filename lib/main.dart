@@ -18,7 +18,7 @@ class MyApp extends StatelessWidget {
           child: IconButton(onPressed: (){
             print("object");
           },
-              iconSize: 50,
+              iconSize: 70,
               icon:Icon (Icons.star)),
         ),
       ),
