@@ -4,44 +4,47 @@ void main() {
   runApp(const MyApp());
 }
 
-class MyApp extends StatelessWidget {
+class MyApp extends StatefulWidget{
   const MyApp({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  State<MyApp> createState() => _MyAppState();
+}
+class _MyAppState extends State<MyApp>{
+
+  bool status = true;
+  @override
+  Widget build(BuildContext context){
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text("container widget")),
+        appBar: AppBar(title: const Text('StateFulWidget & SetState'),),
         body: Container(
-          decoration: BoxDecoration(
-            //alignment: Alignment.center,
-            color: Colors.teal,
-            borderRadius: const BorderRadius.all(Radius.circular(4000) ),
-            border: Border.all(color: Colors.black, width: 10),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.blue,
-                offset: Offset(1, 1),
-                spreadRadius: 1,
-                blurRadius: 10,
-              ),
+
+          padding: EdgeInsets.all(10),
+          child: Column (
+            children: [
+
+              IconButton(
+                  onPressed: (){
+                    setState(() {
+                      status = true;
+                    });
+              },
+              icon: Icon(Icons.add)),
+              status == true ? Icon(Icons.star): Icon(Icons.star_border_outlined),
+
+              IconButton(
+                onPressed: (){
+                  setState(() {
+                    status = false;
+                  });
+                },
+                icon: Icon(Icons.remove)),
             ],
-          ),
-          width: 300,
-          height: 300,
-          alignment: Alignment.center,
-          margin: const EdgeInsets.all(10),
-          padding: const EdgeInsets.all(20),
-          child: const Text(
-            "Abdullah Subih",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 30.2,
-              fontWeight: FontWeight.bold,
-            ),
           ),
         ),
       ),
     );
   }
 }
+
