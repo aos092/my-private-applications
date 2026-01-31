@@ -10,78 +10,47 @@ class MyApp extends StatefulWidget{
   @override
   State<MyApp> createState() => _MyAppState();
 }
-class _MyAppState extends State<MyApp>{
+class _MyAppState extends State<MyApp> {
 
-  String? country;
-  int? age;
+  bool baasketball = false;
+  bool football = false;
+  bool tennis = false;
+
   @override
   Widget build(BuildContext context){
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('RadioListTile & Radio'),),
+        appBar: AppBar(title: const Text('Checkbox'),),
         body: Container(
           padding: EdgeInsets.all(10),
           child: Column (
             children: [
-              Text('Choose Your Country' , style: TextStyle(fontSize: 20)),
-              RadioListTile(
-                title: Text('yemen'),
-                value: 'yemen',
-                groupValue: country,
-                onChanged: (val) {
-                  setState(() {
-                   country = val;
-                  });
-                }),
-              RadioListTile(
-                  title: Text('saudi arabia'),
-                  value: 'saudi arabia',
-                  groupValue: country,
-                  onChanged: (val) {
-                    setState(() {
-                      country = val;
-                    });
-                  }),
-              RadioListTile(
-                  title: Text('oman'),
-                  value: 'oman',
-                  groupValue: country,
-                  onChanged: (val) {
-                    setState(() {
-                      country = val;
-                    });
-                  }),
+              Text('Choose Your favorite Hobbies',style:TextStyle(fontSize: 20)),
 
-              Text('Choose Your Age' , style: TextStyle(fontSize: 20)),
-              RadioListTile(
-                  title: Text('25'),
-                  value: 25,
-                  groupValue: age,
-                  onChanged: (val) {
+              CheckboxListTile(
+                  title: Text("Baasketball"),
+                  value: baasketball,
+                  onChanged: (val){
                     setState(() {
-                      age = val;
+                      baasketball = val!;
                     });
                   }),
-              RadioListTile(
-                  title: Text('18'),
-                  value: 18,
-                  groupValue: age,
-                  onChanged: (val) {
+              CheckboxListTile(
+                  title: Text("Football"),
+                  value: football,
+                  onChanged: (val){
                     setState(() {
-                      age = val;
+                      football = val!;
                     });
                   }),
-              RadioListTile(
-                  title: Text('28'),
-                  value: 28,
-                  groupValue: age,
-                  onChanged: (val) {
+              CheckboxListTile(
+                  title: Text("Tennis"),
+                  value: tennis,
+                  onChanged: (val){
                     setState(() {
-                      age = val;
+                      tennis = val!;
                     });
-                  }),
-              Text('Your Country $country' ,style: TextStyle(fontSize: 20 ,color: Colors.red), ),
-              Text('Your Age $age' ,style: TextStyle(fontSize: 20 ,color: Colors.red), )
+                  })
             ],
           ),
         ),
