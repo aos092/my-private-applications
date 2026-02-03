@@ -12,34 +12,63 @@ class MyApp extends StatefulWidget{
 }
 class _MyAppState extends State<MyApp>{
 
-  bool status = true;
-  @override
+TextEditingController username = TextEditingController();
+@override
   Widget build(BuildContext context){
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text('StateFulWidget & SetState'),),
+        appBar: AppBar(title: const Text('text field'),),
         body: Container(
 
           padding: EdgeInsets.all(10),
           child: Column (
             children: [
+              // part 1
+              TextField(
+                decoration: InputDecoration(
+                  hintText: 'username',
+                  hintStyle: TextStyle(color:Colors.purple)
 
-              IconButton(
+                ),
+              ),
+              TextField(
+                decoration: InputDecoration(
+                    hintText: 'email',
+                    hintStyle: TextStyle(color:Colors.blue)
+
+                ),
+              ),
+              // part 2
+              /*TextField(
+                maxLength: 90,
+                enabled: true,
+                decoration: InputDecoration(
+                  border: OutlineInputBorder(),
+                  focusedBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.red),
+                    borderRadius: BorderRadius.circular(30)
+                  ),
+                  enabledBorder: OutlineInputBorder(
+                    borderSide: BorderSide(color: Colors.green,width: 2)
+                  ),
+                  disabledBorder: OutlineInputBorder(borderSide: BorderSide(color: Colors.black))
+                ),
+              ),*/
+
+              // part 3
+              /*TextField(
+                controller: username,
+              ),
+              MaterialButton(
+                  color: Colors.orange,
+                  textColor: Colors.white,
                   onPressed: (){
-                    setState(() {
-                      status = true;
-                    });
-              },
-              icon: Icon(Icons.add)),
-              status == true ? Icon(Icons.star): Icon(Icons.star_border_outlined),
+                    print(username.text);
+                  },
+                // print in console
+                  child: Text("print"),
+                  ),*/
 
-              IconButton(
-                onPressed: (){
-                  setState(() {
-                    status = false;
-                  });
-                },
-                icon: Icon(Icons.remove)),
             ],
           ),
         ),
