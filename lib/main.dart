@@ -11,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text("Drawer")),
+        appBar: AppBar(title: const Text("Drawer .")),
         drawer: Drawer(
           backgroundColor: Colors.teal,
           child: Container(
