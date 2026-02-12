@@ -11,35 +11,75 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(title: const Text("container widget")),
-        body: Container(
-          decoration: BoxDecoration(
-            //alignment: Alignment.center,
-            color: Colors.teal,
-            borderRadius: const BorderRadius.all(Radius.circular(4000) ),
-            border: Border.all(color: Colors.black, width: 10),
-            boxShadow: const [
-              BoxShadow(
-                color: Colors.blue,
-                offset: Offset(1, 1),
-                spreadRadius: 1,
-                blurRadius: 10,
+        appBar: AppBar(title: const Text("Drawer")),
+        drawer: Drawer(
+          backgroundColor: Colors.teal,
+          child: Container(
+            padding: EdgeInsets.all(15),
+            child: ListView(children: [
+              Row(
+                children: [
+                  Container(
+                    width: 60,
+                    height: 60,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(60),
+                      child: Image.asset("Images/abdullah.png"),),
+                  ),
+                  Expanded(child: ListTile(
+                    title: Text("abdullah"),
+                    subtitle: Text("aosubih@gmail.com"),
+                  ))
+                ],
               ),
-            ],
+              ListTile(
+                title: Text("homepage"),
+                leading: Icon(Icons.home),
+                onTap: (){
+
+                },
+              ),
+              ListTile(
+                title: Text("Account"),
+                leading: Icon(Icons.account_balance_rounded),
+                onTap: (){
+
+                },
+              ),
+              ListTile(
+                title: Text("order"),
+                leading: Icon(Icons.check_box),
+                onTap: (){
+
+                },
+              ),
+              ListTile(
+                title: Text("About Us"),
+                leading: Icon(Icons.help),
+                onTap: (){
+
+                },
+              ),
+              ListTile(
+                title: Text("Contact us"),
+                leading: Icon(Icons.phone_android_outlined),
+                onTap: (){
+
+                },
+              ),
+              ListTile(
+                title: Text("SignOut"),
+                leading: Icon(Icons.exit_to_app),
+                onTap: (){
+
+                },
+              )
+
+            ],),
           ),
-          width: 300,
-          height: 300,
-          alignment: Alignment.center,
-          margin: const EdgeInsets.all(10),
-          padding: const EdgeInsets.all(20),
-          child: const Text(
-            "Abdullah Subih",
-            style: TextStyle(
-              color: Colors.white,
-              fontSize: 30.2,
-              fontWeight: FontWeight.bold,
-            ),
-          ),
+        ),
+        body: Container(
+          
         ),
       ),
     );
