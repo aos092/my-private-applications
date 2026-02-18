@@ -13,50 +13,41 @@ class MyApp extends StatefulWidget{
 }
 class _MyAppState extends State<MyApp>{
 
-  GlobalKey<ScaffoldState> scaffoldkey = GlobalKey();
+  int selectedindex = 0;
+   List<Widget> listwidget = [
+     Text('page 1',style: TextStyle(fontSize: 35),),
+     Text('page 2',style: TextStyle(fontSize: 35),),
+   ];
   @override
   Widget build(BuildContext context){
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: DefaultTabController(
-          length: 4,
-          initialIndex: 1,
-          child: Scaffold (
-        key: scaffoldkey,
-        appBar: AppBar(
-          title:  Text('Tabbar'),
-          bottom: TabBar(
-              indicatorColor: Colors.deepOrange,
-              labelColor: Colors.deepOrange,
-              labelStyle: TextStyle(fontSize: 15),
-              unselectedLabelColor: Colors.black,
-              unselectedLabelStyle: TextStyle(fontSize: 10),
-              tabs: [
-          Tab(
-            icon: Icon(Icons.chat),
-            child: Text('Chat'),),
-          Tab(
-            icon: Icon(Icons.update),
-            child: Text('Updates'),),
-          Tab(
-            icon: Icon(Icons.commute),
-            child: Text('Communities'),),
-          Tab(
-            icon: Icon(Icons.call),
-            child: Text('Calls'),)
-        ]),),
+      home:  Scaffold (
+        bottomNavigationBar: BottomNavigationBar(
+          onTap: (val){
+            setState(() {
+              selectedindex = val;
+            });
+          },
+          currentIndex: selectedindex,
+          backgroundColor: Colors.teal,
+          selectedItemColor: Colors.white,
+          unselectedItemColor: Colors.black,
+          selectedFontSize: 20,
+          unselectedFontSize: 15,
+          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
+          items: [
+            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
+            BottomNavigationBarItem(icon: Icon(Icons.settings),label: "Settings"),
+          ],
+        ),
+        appBar: AppBar(title:  Text('BottomNavigationBar'),),
         body: Container(
-         padding: EdgeInsets.all(10),
-          child: TabBarView(children: [
-            Text('Chat Page'),
-            Text('Updates Page'),
-            Text('Communities Page'),
-            Text('Calls Page')
-
-          ]),
+         child: listwidget.elementAt(selectedindex),
+          
  
         ),
-      )),
+      ),
     );
   }
 }
