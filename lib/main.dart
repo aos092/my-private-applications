@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:text_widget/cuctimcard.dart';
 
 void main() {
   runApp(const MyApp());
@@ -23,27 +24,17 @@ class _MyAppState extends State<MyApp>{
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home:  Scaffold (
-        bottomNavigationBar: BottomNavigationBar(
-          onTap: (val){
-            setState(() {
-              selectedindex = val;
-            });
-          },
-          currentIndex: selectedindex,
-          backgroundColor: Colors.teal,
-          selectedItemColor: Colors.white,
-          unselectedItemColor: Colors.black,
-          selectedFontSize: 20,
-          unselectedFontSize: 15,
-          selectedLabelStyle: TextStyle(fontWeight: FontWeight.bold),
-          items: [
-            BottomNavigationBarItem(icon: Icon(Icons.home),label: "Home"),
-            BottomNavigationBarItem(icon: Icon(Icons.settings),label: "Settings"),
-          ],
-        ),
-        appBar: AppBar(title:  Text('BottomNavigationBar'),),
+        appBar: AppBar(title:  Text('CustomWidgetShortcut'),),
         body: Container(
-         child: listwidget.elementAt(selectedindex),
+         padding: EdgeInsets.all(10),
+         child: Column(
+           children: [
+             CustomListTitle(name: "abdullah", email: "aosubih@gmail.com", date: "2026-2-20", imagename: 'man.jpg',),
+             CustomListTitle(name: "taha", email: "taha@gmail.com", date: "2026-2-20", imagename: 'photo1.jpeg',),
+             CustomListTitle(name: "abdullah", email: "aosubih@gmail.com", date: "2026-2-20", imagename: 'man.jpg',),
+             CustomListTitle(name: "taha", email: "taha@gmail.com", date: "2026-2-20", imagename: 'photo1.jpeg',),
+           ],
+         ),
           
  
         ),
@@ -51,4 +42,6 @@ class _MyAppState extends State<MyApp>{
     );
   }
 }
+
+
 
