@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:text_widget/HomePage.dart';
+import 'package:text_widget/aboutUs.dart';
 
 
 class Contact extends StatelessWidget {
@@ -14,21 +16,41 @@ class Contact extends StatelessWidget {
             style: TextStyle(fontSize: 25),
             textAlign: TextAlign.center,),
         ),
-        /*MaterialButton(
-          onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => AboutUs()));
-          },
-          child: Text('go to page About'),
-          color: Colors.teal,
-          textColor: Colors.white,),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: MaterialButton(
+            color: Colors.teal,
+            textColor: Colors.white,
+            onPressed: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => AboutUs()));
+            },
+            child: Text('go to page about'),
+          ),
+        ),
 
-        MaterialButton(
-          onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => AboutUs()));
-          },
-          child: Text('go to page About'),
-          color: Colors.teal,
-          textColor: Colors.white,)*/
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: MaterialButton(
+            color: Colors.teal,
+            textColor: Colors.white,
+            onPressed: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage()));
+            },
+            child: Text('go to page Home'),
+          ),
+        ),
+
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: MaterialButton(
+            color: Colors.teal,
+            textColor: Colors.white,
+            onPressed: (){
+              Navigator.of(context).pop();
+            },
+            child: Text('back'),
+          ),
+        ),
       ],),
     );
   }

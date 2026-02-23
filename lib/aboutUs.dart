@@ -16,21 +16,41 @@ class AboutUs extends StatelessWidget {
             style: TextStyle(fontSize: 25),
             textAlign: TextAlign.center,),
         ),
-        MaterialButton(
-          onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Contact()));
-          },
-          child: Text('go to page contact'),
-          color: Colors.teal,
-          textColor: Colors.white,),
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: MaterialButton(
+            color: Colors.teal,
+            textColor: Colors.white,
+            onPressed: (){
+              Navigator.of(context).pushReplacement(MaterialPageRoute(builder: (context) => Contact()));
+            },
+            child: Text('go to page contact'),
+            ),
+        ),
 
-        MaterialButton( 
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: MaterialButton(
+            color: Colors.teal,
+            textColor: Colors.white,
+            onPressed: (){
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage()));
+            },
+            child: Text('go to page Home'),
+          ),
+        ),
+
+        Container(
+          margin: EdgeInsets.symmetric(horizontal: 20),
+          child: MaterialButton(
+            color: Colors.teal,
+            textColor: Colors.white,
           onPressed: (){
-            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage()));
+            Navigator.of(context).pop();
           },
-          child: Text('go to page Home'),
-          color: Colors.teal,
-          textColor: Colors.white,)
+          child: Text('Back'),
+        ),
+        ),
       ],),
     );
   }
