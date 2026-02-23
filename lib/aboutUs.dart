@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:text_widget/Contact.dart';
+import 'package:text_widget/HomePage.dart';
 
 
 class AboutUs extends StatelessWidget {
@@ -13,7 +15,22 @@ class AboutUs extends StatelessWidget {
           child: Text('About us page',
             style: TextStyle(fontSize: 25),
             textAlign: TextAlign.center,),
-        )
+        ),
+        MaterialButton(
+          onPressed: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Contact()));
+          },
+          child: Text('go to page contact'),
+          color: Colors.teal,
+          textColor: Colors.white,),
+
+        MaterialButton( 
+          onPressed: (){
+            Navigator.of(context).push(MaterialPageRoute(builder: (context) => Homepage()));
+          },
+          child: Text('go to page Home'),
+          color: Colors.teal,
+          textColor: Colors.white,)
       ],),
     );
   }

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:text_widget/HomePage.dart';
-import 'package:text_widget/cuctimcard.dart';
+//import 'package:text_widget/cuctimcard.dart';
 
 void main() {
   runApp(const MyApp());
